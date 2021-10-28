@@ -69,18 +69,37 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-  golden_toolkit:
+  golden_tests_utils:
     dependency: "direct dev"
+    description:
+      path: golden_tests_utils
+      relative: true
+    source: path
+    version: "0.0.1"
+  golden_toolkit:
+    dependency: transitive
     description:
       name: golden_toolkit
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.0"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.0"
   lints:
     dependency: transitive
     description:

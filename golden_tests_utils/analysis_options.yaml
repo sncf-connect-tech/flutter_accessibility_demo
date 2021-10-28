@@ -1,0 +1,10 @@
+include: package:pedantic/analysis_options.yaml
+
+analyzer:
+  errors:
+    missing_required_param: error
+    omit_local_variable_types: ignore
+
+linter:
+  rules:
+    omit_local_variable_types: false
