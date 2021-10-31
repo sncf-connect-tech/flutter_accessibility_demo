@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
 import 'package:flutter_accessibility_demo/cases/no_state.dart';
 import 'package:flutter_accessibility_demo/cases/text_size.dart';
+import 'package:flutter_accessibility_demo/cases/unrelated_texts.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -63,6 +64,17 @@ class MyHomePage extends StatelessWidget {
                       builder: (context) => const NoStatePage(
                         initiallyExpanded: false,
                       ),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('Unrelated Texts'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UnrelatedTextsPage(),
                     ));
               },
             ),
