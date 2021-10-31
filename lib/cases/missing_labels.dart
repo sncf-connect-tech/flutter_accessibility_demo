@@ -23,9 +23,12 @@ class MissingLabelsPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SvgPicture.asset(
-              'svg/switch--on.svg',
-              width: MediaQuery.of(context).size.width * 0.8,
+            ElevatedButton(
+              onPressed: () {},
+              child: SvgPicture.asset(
+                'svg/switch--on.svg',
+                width: MediaQuery.of(context).size.width * 0.8,
+              ),
             ),
             const SizedBox(
               height: 20,

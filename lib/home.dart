@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_accessibility_demo/cases/contrast.dart';
 import 'package:flutter_accessibility_demo/cases/landscape.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
 import 'package:flutter_accessibility_demo/cases/no_state.dart';
@@ -42,6 +43,11 @@ class MyHomePage extends StatelessWidget {
               title: const Text('Contrast'),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContrastPage(),
+                    ));
               },
             ),
             ListTile(
