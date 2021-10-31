@@ -18,6 +18,10 @@ class _UnrelatedTextsPageState extends State<UnrelatedTextsPage> {
           children: [
             const CheckboxUnrelatedLabel(),
             const SizedBox(
+              height: 10,
+            ),
+            const CheckboxMergedLabel(),
+            const SizedBox(
               height: 20,
             ),
             CheckboxListTile(
@@ -70,6 +74,49 @@ class _CheckboxUnrelatedLabelState extends State<CheckboxUnrelatedLabel> {
               onChanged: (bool? value) {},
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CheckboxMergedLabel extends StatefulWidget {
+  const CheckboxMergedLabel({Key? key}) : super(key: key);
+
+  @override
+  _CheckboxMergedLabelState createState() => _CheckboxMergedLabelState();
+}
+
+class _CheckboxMergedLabelState extends State<CheckboxMergedLabel> {
+  bool isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return MergeSemantics(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            isChecked = !isChecked;
+          });
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              const SizedBox(
+                width: 2,
+              ),
+              const Icon(Icons.train),
+              const SizedBox(
+                width: 33,
+              ),
+              const Expanded(child: Text('Check Me')),
+              Checkbox(
+                checkColor: Colors.white,
+                value: isChecked,
+                onChanged: (bool? value) {},
+              )
+            ],
+          ),
         ),
       ),
     );
