@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_accessibility_demo/cases/landscape.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
 import 'package:flutter_accessibility_demo/cases/no_state.dart';
 import 'package:flutter_accessibility_demo/cases/text_size.dart';
@@ -75,6 +76,17 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const UnrelatedTextsPage(),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('Landscape'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LandscapePage(),
                     ));
               },
             ),
