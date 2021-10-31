@@ -40,7 +40,7 @@ class LandscapePage extends StatelessWidget {
         ),
       ),
       fab: Padding(
-        padding: const EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.only(bottom: 50),
         child: ElevatedButton(
           child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,

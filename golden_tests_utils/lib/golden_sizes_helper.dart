@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 
 class GoldenSizeHelper {
-  static const Device phoneLandscape = Device(name: 'phone_landscape', size: Size(800, 350));
+  static Device phoneLandscape =
+      Device(name: 'phone_landscape', size: Size(Device.iphone11.size.height, Device.iphone11.size.width));
 
   static final screens = screensWithoutAccessibility + accessibleScreens;
 
