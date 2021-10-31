@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
+import 'package:flutter_accessibility_demo/cases/no_state.dart';
 import 'package:flutter_accessibility_demo/cases/text_size.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -49,6 +50,19 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const MissingLabelsPage(),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('No State'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NoStatePage(
+                        initiallyExpanded: false,
+                      ),
                     ));
               },
             ),

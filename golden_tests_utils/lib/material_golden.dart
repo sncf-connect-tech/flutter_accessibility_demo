@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_tests_utils/widget_golden.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:meta/meta.dart';
 
 import 'golden_sizes_helper.dart';
@@ -99,10 +100,8 @@ Future<void> _pumpAndTest({
   if (showSemanticsDebugger) {
     await tester.pumpWidgetBuilder(
       SemanticsDebugger(
-        labelStyle: const TextStyle(
-          color: Color(0xFF000000),
-          fontSize: 10.0,
-          height: 0.8,
+        labelStyle: GoogleFonts.lato(
+          textStyle: TextStyle(color: Color(0xFF000000), fontSize: 10.0, height: 0.8),
         ),
         child: widget,
       ),
@@ -136,6 +135,11 @@ class MaterialGolden extends StatelessWidget {
         title: 'Flutter accessibility demo',
         home: child,
         navigatorObservers: navigatorObservers ?? [],
+        theme: ThemeData(
+          textTheme: GoogleFonts.latoTextTheme(
+            Theme.of(context).textTheme,
+          ),
+        ),
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

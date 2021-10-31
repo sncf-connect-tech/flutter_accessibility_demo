@@ -1,52 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_accessibility_demo/utils/layout.dart';
 
 class TextSizePage extends StatefulWidget {
-  const TextSizePage({Key? key}) : super(key: key);
+  final double? initPoliceSize;
+
+  const TextSizePage({Key? key, this.initPoliceSize}) : super(key: key);
 
   @override
   State<TextSizePage> createState() => _TextSizePageState();
 }
 
 class _TextSizePageState extends State<TextSizePage> {
-  double _currentTextSizeValue = 1;
+  late double _currentTextSizeValue;
+
+  @override
+  void initState() {
+    _currentTextSizeValue = widget.initPoliceSize ?? 1;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text('Text Size')),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const Padding(padding: EdgeInsets.all(20), child: Text('Taille du texte')),
-              Slider(
-                value: _currentTextSizeValue,
-                min: 1,
-                max: 3,
-                divisions: 2,
-                label: _currentTextSizeValue.round().toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    _currentTextSizeValue = value;
-                  });
-                },
-              ),
-              ButtonWithPadding(
-                text: 'Text court',
-                currentTextSizeValue: _currentTextSizeValue,
-              ),
-              ButtonWithPadding(
-                text: 'Text plus long',
-                currentTextSizeValue: _currentTextSizeValue,
-              ),
-              ButtonWithPadding(
-                text: 'Text relativement trop long',
-                currentTextSizeValue: _currentTextSizeValue,
-              ),
-              ButtonWithPadding(
-                text: 'Text très très looong qui prend trop de place',
-                currentTextSizeValue: _currentTextSizeValue,
-              )
-            ],
-          ),
+    return DemoLayout(
+        title: 'Text Size',
+        body: Column(
+          children: [
+            const Padding(padding: EdgeInsets.all(20), child: Text('Taille du texte')),
+            Slider(
+              value: _currentTextSizeValue,
+              min: 1,
+              max: 3,
+              divisions: 2,
+              label: _currentTextSizeValue.round().toString(),
+              onChanged: (double value) {
+                setState(() {
+                  _currentTextSizeValue = value;
+                });
+              },
+            ),
+            ButtonWithPadding(
+              text: 'Text court',
+              currentTextSizeValue: _currentTextSizeValue,
+            ),
+            ButtonWithPadding(
+              text: 'Text plus long',
+              currentTextSizeValue: _currentTextSizeValue,
+            ),
+            ButtonWithPadding(
+              text: 'Text relativement trop long',
+              currentTextSizeValue: _currentTextSizeValue,
+            ),
+            ButtonWithPadding(
+              text: 'Text très très looong qui prend trop de place',
+              currentTextSizeValue: _currentTextSizeValue,
+            )
+          ],
         ));
   }
 }
@@ -61,7 +69,6 @@ class ButtonWithPadding extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
         onPressed: () {},
         child: Text(
           text,
