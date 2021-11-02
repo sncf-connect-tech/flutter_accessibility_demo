@@ -6,7 +6,7 @@ void main() {
   testWidgets('Contrast Guideline on ContrastPage is OK', (WidgetTester tester) async {
     final widget = MaterialApp(builder: (context, child) {
       return const ContrastPage(
-        textColor: Colors.white,
+        isContrastOk: true,
       );
     });
 
@@ -17,7 +17,7 @@ void main() {
   testWidgets('Contrast Guideline on ContrastPage is KO', (WidgetTester tester) async {
     final widget = MaterialApp(builder: (context, child) {
       return const ContrastPage(
-        textColor: Colors.red,
+        isContrastOk: false,
       );
     });
 

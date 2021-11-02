@@ -9,7 +9,7 @@ void main() {
       screenName: 'Missing Labels',
       skipTapTargetSizeGuideline: true,
       skipLabeledTapTargetGuideline: true,
-      semanticPhoneHeight: 1000,
+      semanticPhoneHeight: 1500,
       builder: () {
         return const MissingLabelsPage();
       });

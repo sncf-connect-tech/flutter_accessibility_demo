@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_accessibility_demo/cases/bad_interaction.dart';
 import 'package:flutter_accessibility_demo/cases/contrast.dart';
 import 'package:flutter_accessibility_demo/cases/landscape.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
@@ -93,6 +94,17 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const LandscapePage(),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('Bad Interaction'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BadInteractionsPage(),
                     ));
               },
             ),

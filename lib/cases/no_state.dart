@@ -44,7 +44,10 @@ class _NoStatePageState extends State<NoStatePage> {
                   isExpanded = value;
                 });
               },
-              title: Semantics(label: isExpanded ? 'Ouvert' : 'Fermé', child: const Text('Cliquez ici (avec état)')),
+              title: Semantics(
+                label: isExpanded ? 'Ouvert' : 'Fermé',
+                child: const Text('Cliquez ici (avec état)'),
+              ),
               children: [
                 Container(
                   color: Colors.grey,

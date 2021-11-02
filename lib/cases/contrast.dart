@@ -2,15 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_accessibility_demo/utils/layout.dart';
 
 class ContrastPage extends StatefulWidget {
-  final Color? textColor;
-  const ContrastPage({Key? key, this.textColor}) : super(key: key);
+  final bool? isContrastOk;
+  const ContrastPage({Key? key, this.isContrastOk}) : super(key: key);
 
   @override
   State<ContrastPage> createState() => _ContrastPageState();
 }
 
 class _ContrastPageState extends State<ContrastPage> {
-  bool isContrastOk = true;
+  late bool isContrastOk;
+
+  @override
+  void initState() {
+    isContrastOk = widget.isContrastOk ?? true;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DemoLayout(
@@ -20,7 +27,7 @@ class _ContrastPageState extends State<ContrastPage> {
             Switch(
               onChanged: (bool value) {
                 setState(() {
-                  isContrastOk = value!;
+                  isContrastOk = value;
                 });
               },
               value: isContrastOk,
@@ -37,7 +44,7 @@ class _ContrastPageState extends State<ContrastPage> {
                     child: Text(
                       isContrastOk ? 'Good Contrast' : 'Bad Contrast',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: widget.textColor ?? Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
